@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones</title>
+</head>
+<body>
+    <script>
+
+        function sumar(a,b){
+            return a+b;
+        }
+
+        
+        let operacion = function(){
+            let n = prompt("Ingrese un nombre");
+            document.write("Holii :)") 
+        }
+        
+        let funcion3 = (a,b)=>{
+
+        }
+
+        function sumar2(...s){
+            let acum = 0;
+            for (let index = 0; index < s.length; index++){
+                acum = acum + s[index];
+            }
+            return acum;
+        }
+
+        document.write(sumar2(3,5,5,7));
+
+    </script>
+</body>
+</html>

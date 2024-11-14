@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+        <label for="nom">Ingresa tu Nombre</label><br>
+        <br><input type="text" name="" id="nom"><br>
+        <br><label for="num">Ingresa tu edad</label><br>
+        <br><input type="number" name="" id="num"><br>
+        <br><input type="text" name="" id="res" readonly="" placeholder="Resultado"><br>
+        <br><button type="button" onclick="mostrarMensaje()">Enviar</button>
+
+        <h1>////////////////////////////////////</h1>
+
+        <h1>Sumar</h1>
+        <label for="">Ingresa un numero</label><br>
+        <br><input type="number" name="" id="nu1"><br>
+        <label for="">Ingresa un numero</label><br>
+        <br><input type="number" name="" id="nu2"><br>
+
+
+        <br><input type="text" name="" id="resultadosum" readonly="" placeholder="Resultado"><br>
+        <br><button type="button" onclick="resulsuma()">Sumar</button>
+    
+        <h1>////////////////////////////////////</h1>
+        
+
+
+    
+    <script>
+        
+        function mostrarMensaje() {
+        let nom = document.getElementById("nom").value;
+        let num = document.getElementById("num").value;
+        alert("Hola soy " + nom + " y tengo " + num + " años");
+    }
+
+        function resulsuma(){
+            let numero1 = parseInt( nu1.value)
+            let numero2 = parseInt( nu2.value)
+
+            resultado = numero1+numero2
+
+            document.getElementById("resultadosum").value = resultado
+        }
+
+        function condicionales(){
+            let a=43;
+            let b=3;
+
+            
+
+        }
+
+        //metodos de entrada
+        // let num1 = parseInt(prompt("Ingrese numero 1"));
+        // let num2 = parseInt(prompt("Ingrese numero 2"));
+        // //let resul = num1 + num2
+        // alert("El resultado es: " + (num1+num2) );
+
+
+        //SOLICITAR AL USUAIRO NOMBRE Y EDAD IMPRIMIR UN SALUDO QUE DIGA "HOLA SOY ... Y TENGO TAN AÑOS"
+
+        
+
+
+    </script>
+</body>
+</html>

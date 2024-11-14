@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+</head>
+
+<body>
+
+    <script>
+        function puntoa() {
+
+            let numa = parseInt(prompt("Ingrese un numero"))
+            if (numa >= 0) {
+                document.write('El numero ingresado es positivo')
+            }
+            else {
+                document.write('El numero ingresado no es positivo')
+            }
+        }
+
+        function puntob() {
+            let numb = parseInt(prompt("Ingrese un numero"));
+            if (numb > 0) {
+                document.write('El numero ingresado es positivo')
+            }
+            else if (numb < 0) {
+                document.write('El numero ingresado es negativo')
+            }
+            else {
+                document.write('El numero ingresado es cero')
+            }
+        }
+
+        function puntoc() {
+            let edadc = parseInt(prompt('Ingrese su edad'))
+
+            if (edadc < 18) {
+                document.write('Eres menor de edad')
+            }
+            else {
+                document.write("Eres mayor de edad")
+            }
+        }
+
+        function puntod() {
+            let edadd = parseInt(prompt('Ingrese su edad'))
+
+            if (edadd > 0 && edadd < 18) {
+                document.write('Eres menor de edad')
+            }
+            else if (edadd < 0) {
+                document.write("numero no valido")
+            }
+            else {
+                document.write("Eres mayor de edad")
+            }
+        }
+
+        function puntoe() {
+            let mese = parseInt(prompt('Ingresa un mes (1-12)'))
+
+            if (mese > 1 && mese < 3) {
+                document.write('Es primavera')
+            }
+            else if (mese > 4 && mese < 6) {
+                document.write('Es verano')
+            }
+            else if (mese > 7 && mese < 9) {
+                document.write("Es otoño")
+            }
+            else {
+                document.write("Es invierno")
+            }
+        }
+
+        function puntof() {
+            let vlf = parseInt(prompt("Ingrese La velocidad en k/h"))
+
+            if (vlf > 30 && vlf < 60) {
+                document.write("La velocidad es baja")
+            }
+            else if (vlf >= 60 && vlf < 70) {
+                document.write("La velocidad es media")
+            }
+            else {
+                document.write("La velocidad es alta")
+            }
+        }
+
+        function puntog() {
+            let edadg = parseInt(prompt("Ingrese su edad"));
+
+            if (edadg > 0 && edadg < 13) {
+                document.write("Eres un niño :)");
+            } else if (edadg >= 14 && edadg <= 17) {
+                document.write("Eres un adolescente c:");
+            } else if (edadg >= 18 && edadg <= 35) {
+                document.write("Eres un adulto joven =D");
+            }
+            else if (edadg >= 36 && edadg <= 49) {
+                document.write("Eres un adulto :D")
+            }
+            else {
+                document.write("Eres mayor :o")
+            }
+        }
+
+        function puntoh() {
+
+            const numAleatorio = Math.floor(Math.random() * 6) + 1;
+            document.write(numAleatorio);
+
+        }
+
+        function puntoi() {
+            const numAleatorio = Math.floor(Math.random() * 7) + 1;
+            document.write(numAleatorio);
+
+            switch (numAleatorio) {
+                case 1:
+                    document.write(' Es domingo')
+                    break;
+                case 2:
+                    document.write(' Es lunes')
+                    break;
+                case 3:
+                    document.write(' Es martes')
+                    break;
+                case 4:
+                    document.write(' Es miercoles')
+                    break;
+                case 5:
+                    document.write(' Es jueves')
+                    break;
+                case 6:
+                    document.write(' Es viernes')
+                    break;
+                case 7:
+                    document.write(' Es sabado')
+                    break;
+            }
+        }
+        
+        let salir = "NO"
+        
+        while (salir == "NO") {
+
+
+            let key = parseInt(prompt("ingrese un numero (1-9) para ejecutar el ejercicio"));
+            switch (key) {
+                case 1:
+                    puntoa();
+                    break;
+                case 2:
+                    puntob();
+                    break;
+                case 3:
+                    puntoc();
+                    break;
+                case 4:
+                    puntod();
+                    break;
+                case 5:
+                    puntoe();
+                    break;
+                case 6:
+                    puntof();
+                    break;
+                case 7:
+                    puntog();
+                    break;
+                case 8:
+                    puntoh();
+                    break;
+                case 9:
+                    puntoi();
+                    break;
+                case 10:
+                    salir = "SI"
+                    break;
+            }
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>
