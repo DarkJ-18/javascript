@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipular dom</title>
+</head>
+
+<body>
+    <input type="text">
+    <button onclick="cargar()">Mostrar</button>
+    <div id="cajita" class="container">
+        <h2 id="nombre"> </h2>
+        <p id="texto"> </p>
+
+    </div>
+    <script>
+        const API_URL = "https://rickandmortyapi.com/api";
+        var persona = {
+            nombre : "Juan",
+            opinion: "habla todo el dia en clase"
+        };
+        function cargar() {
+            document.getElementById("nombre").innerText = persona.nombre; 
+            document.getElementById("texto").innerHTML = persona.opinion;
+            document.getElementById("cajita").style.backgroundColor = "black";
+            document.getElementById("cajita").style.color = "white";
+            document.getElementById("cajita").style.borderRadius = "20px";
+            document.getElementById("cajita").style.justifyContent = "center";
+            document.getElementById("cajita").style.textAlign = "center";
+
+
+
+
+
+
+
+
+        }
+    </script>
+</body>
+
+</html>

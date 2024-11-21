@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ejercicio 11 objetos</title>
+</head>
+
+<body>
+    <script>
+        //objeto
+        let aprendiz = {
+            nombre: "Juan",
+            edad: 24,
+            nota: 5,
+        };
+
+        let aprendiz2 = {
+            nombre: "carlos",
+            edad: 99,
+            nota: 2,
+        };
+        console.log(aprendiz);
+        console.log(aprendiz.nombre);
+        aprendiz.edad = 20;
+        console.log(aprendiz.edad);
+        aprendiz.ciudad = "Medellin";
+        console.log(aprendiz);
+
+        let ficha = [aprendiz, aprendiz2];
+        ficha.push(1); // agrega al final
+        console.log(ficha);
+        ficha.pop() //agrega al ultimo
+        console.log(ficha);
+        ficha.shift() //agrega al principio
+        ficha.unshift() //inserta al final
+    </script>
+</body>
+
+</html>

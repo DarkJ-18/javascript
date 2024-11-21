@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Personaje - Rick and Morty</title>
+    
+</head>
+<body>
+    <h1>Buscar Personaje de Rick and Morty</h1>
+
+    <!-- Input para ingresar el ID -->
+    <label for="characterId">ID del personaje:</label>
+    <input type="number" id="characterId" min="1" placeholder="Escribe el ID">
+    <button onclick="getCharacter()">Buscar</button>
+
+    <!-- Contenedor para mostrar el personaje -->
+    <div id="character"></div>
+
+    <script>
+        async function getCharacter() {
+            // Obtener el ID del input
+            const characterId = document.getElementById("characterId").value;
+            
+            // Validar que haya un ID
+            if (!characterId) {
+                alert("Por favor, ingresa un ID válido.");
+                return;
+            }
+
+            const API_URL = `https://rickandmortyapi.com/api/character/${characterId}`;
+
+            try {
+                // Llamada a la API
+                const response = await fetch(API_URL);
+                
+                // Verificar si el personaje existe
+                if (!response.ok) {
+                    throw new Error("Personaje no encontrado");
+                }
+
+                const character = await response.json();
+
+                // Crear contenido para el personaje
+                const characterDiv = document.getElementById("character");
+                characterDiv.innerHTML = `
+                    <h2>${character.name}</h2>
+                    <img src="${character.image}" alt="${character.name}">
+                    <p>Status: ${character.status}</p>
+                    <p>Species: ${character.species}</p>
+                    <p>Gender: ${character.gender}</p>
+                `;
+            } catch (error) {
+                console.error("Error al obtener el personaje:", error);
+                document.getElementById("character").innerHTML = `<p>No se encontró el personaje. Intenta con otro ID.</p>`;
+            }
+        }
+    </script>
+    
+</body>
+</html>

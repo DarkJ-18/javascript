@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api</title>
+    <link rel="stylesheet" href="/Ejercicios js/bootstrap.min.css">
+</head>
+
+<body onload="cargarCatalogo2()">
+
+
+    <div  class="container">
+        <div id="catalogo" class="row align-items-start"></div>
+        <!-- <div id="titulo"></div>
+        <div id="precio"></div>
+        <div id="image"><img id="productImage" alt="imagen del producto"></div> -->
+    </div>
+
+
+
+    <script>
+        function cargarCatalogo() {
+            fetch('products.json')
+                .then(res => res.json())
+                .then(json => {
+                    json.forEach(element => {
+                        let tarjeta = document.createElement("div");
+                        let nomProduct = document.createElement("h3");
+                        let precioProduct = document.createElement("h1")
+                        let imgProduct = document.createElement("img")
+                        let descripcion = document.createElement("p")
+
+                        nomProduct.innerText = element.title
+                        precioProduct.innerText = element.price
+                        imgProduct.src = element.image
+                        imgProduct.width = 150
+                        descripcion.innerText = element.description
+
+
+                        tarjeta.appendChild(nomProduct)
+                        tarjeta.appendChild(precioProduct)
+                        tarjeta.appendChild(imgProduct)
+                        tarjeta.appendChild(descripcion)
+
+                        tarjeta.width = 180
+
+                        catalogo.appendChild(tarjeta)
+
+
+
+                    });
+                })
+                .catch(error => console.error('Error al cargar el catálogo:', error));
+        }
+
+
+
+        function cargarCatalogo2() {
+            fetch('products.json')
+                .then(res => res.json())
+                .then(json => {
+                    let listProductos;
+                    json.forEach(element => {
+                        listProductos += `<div class="card" style="width: 18rem;">
+                        <img src="${element.image}" class="card-img-top" alt="imagen producto">
+                        <div class="card-body">
+                            <h5 class="card-title">${element.title}</h5>
+                            <p class="card-text">${element.description}</p>
+                            ${element.price}
+                    </div>
+                    </div>`
+                    });
+                    catalogo.innerHTML = listProductos
+                })
+        }
+
+    </script>
+
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text"></p>
+        </div>
+    </div>
+
+    <script src="/Ejercicios js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
